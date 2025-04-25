@@ -1,0 +1,96 @@
+<div class="max-w-xl mx-auto">
+  <form 
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    class="bg-white px-5 py-10 rounded-lg space-y-10 mt-10 shadow-lg"
+  >
+
+    <!-- Mensaje Global -->
+    <app-mensaje-error 
+    *ngIf="mensajeGlobal"
+    [mensaje]="mensajeGlobal"
+    [tipo]="tipoMensaje ?? 'error'"
+    class="mb-5">
+  </app-mensaje-error>
+
+
+    <!-- Campo Handle -->
+    <div class="grid grid-cols-1 space-y-3">
+      <label for="handle" class="text-2xl text-slate-500">Handle</label>
+      <input
+        id="handle"
+        type="text"
+        placeholder="Nombre de usuario: sin espacios"
+        class="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+        formControlName="handle"
+      />
+    </div>
+
+    <!-- Campo Nombre -->
+    <div class="grid grid-cols-1 space-y-3">
+      <label for="name" class="text-2xl text-slate-500">Nombre</label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Tu Nombre"
+        class="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+        formControlName="name"
+      />
+    </div>
+
+    <!-- Campo Email -->
+    <div class="grid grid-cols-1 space-y-3">
+      <label for="email" class="text-2xl text-slate-500">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Email de Registro"
+        class="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+        formControlName="email"
+      />
+    </div>
+
+    <!-- Campo Password -->
+    <div class="grid grid-cols-1 space-y-3">
+      <label for="password" class="text-2xl text-slate-500">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Password de Registro"
+        class="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+        formControlName="password"
+      />
+    </div>
+
+    <!-- Campo Repetir Password -->
+    <div class="grid grid-cols-1 space-y-3">
+      <label for="password_confirmation" class="text-2xl text-slate-500">Repetir Password</label>
+      <input
+        id="password_confirmation"
+        type="password"
+        placeholder="Repetir Password"
+        class="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+        formControlName="password_confirmation"
+      />
+    </div>
+
+    <!-- Botones -->
+    <div class="flex flex-col sm:flex-row sm:justify-between gap-4 pt-4">
+      <button
+        class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+        type="submit"
+      >
+        Registrarse
+      </button>
+
+      <button
+        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+        [routerLink]="'/'"
+        type="submit"
+      >
+        Regresar al inicio de sesión
+      </button>
+    </div>
+
+  </form>
+</div>

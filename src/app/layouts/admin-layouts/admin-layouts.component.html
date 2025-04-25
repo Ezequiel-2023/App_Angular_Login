@@ -1,0 +1,61 @@
+<div class="mb-5">
+    <!-- Dropdown para pantallas pequeñas -->
+    <div class="sm:hidden">
+        <label for="tabs" class="sr-only">Selecciona una pestaña</label>
+        <select
+           (change)="cambiarVista($event)"
+           class="block w-full rounded-md ..."
+>
+            <option value="/socialProfile">Links</option>
+            <option value="/profile">Mi Perfil</option>
+        </select>
+
+    </div>
+
+    <!-- Navegación para pantallas más grandes -->
+    <div class="hidden sm:block">
+        <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                <a
+                [routerLink]="'socialProfile'"
+                    class="group inline-flex items-center border-b-2 py-4 px-1 text-xl border-blue-500 text-blue-500"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="-ml-0.5 mr-2 h-5 w-5 text-blue-500"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <!-- Ícono BookmarkSquare -->
+                        <path
+                            d="M5 3a2 2 0 00-2 2v16l7-3 7 3V5a2 2 0 00-2-2H5z"
+                        />
+                    </svg>
+                    <span>Links</span>
+                </a>
+                <a
+                [routerLink]="'profile'"
+                    class="group inline-flex items-center border-b-2 py-4 px-1 text-xl border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="-ml-0.5 mr-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <!-- Ícono User -->
+                        <path
+                            d="M12 12c2.67 0 8 1.34 8 4v2H4v-2c0-2.66 5.33-4 8-4zm0-2c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"
+                        />
+                    </svg>
+                    <span>Mi Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <div class="py-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

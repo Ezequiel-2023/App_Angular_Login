@@ -1,0 +1,42 @@
+<form 
+    class="bg-white p-10 rounded-lg space-y-5"
+>
+    <legend class="text-2xl text-slate-800 text-center">Editar Información</legend>
+    <div class="grid grid-cols-1 gap-2">
+        <label for="handle">Handle:</label>
+        <input
+            type="text"
+            class="border-none bg-slate-100 rounded-lg p-2"
+            placeholder="handle o Nombre de Usuario"
+            id="handle"
+            name="handle"
+        />
+    </div>
+
+    <div class="grid grid-cols-1 gap-2">
+        <label for="description">Descripción:</label>
+        <textarea
+            class="border-none bg-slate-100 rounded-lg p-2"
+            placeholder="Tu Descripción"
+            id="description"
+            name="description"
+        ></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-2">
+        <label for="image">Imagen:</label>
+        <input
+            id="image"
+            type="file"
+            class="border-none bg-slate-100 rounded-lg p-2"
+            accept="image/*"
+            name="image"
+        />
+    </div>
+
+    <input
+        type="submit"
+        class="bg-cyan-400 p-2 text-lg w-full uppercase text-slate-600 rounded-lg font-bold cursor-pointer"
+        value="Guardar Cambios"
+    />
+</form>

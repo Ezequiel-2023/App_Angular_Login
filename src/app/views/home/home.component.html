@@ -1,0 +1,40 @@
+<h1 class='text-3xl text-center text-white font-bold'>Login</h1>
+<form 
+[formGroup]="loginForm"
+(ngSubmit)="onLogin()"
+class='mt-10'>
+<!-- Mensaje Global -->
+<app-mensaje-error 
+*ngIf="mensajeGlobal"
+[mensaje]="mensajeGlobal"
+[tipo]="tipoMensaje ?? 'error'"
+class="mb-5">
+</app-mensaje-error>
+    <input
+          type='email'
+          placeholder='Email'
+          class='border w-full p-3 rounded-xl mb-5 text-white font-bold'
+          formControlName="email"
+        />
+     <input
+          type='password'
+          placeholder='Password'
+          class='border w-full p-3 rounded-xl mb-5 text-white font-bold'
+          formControlName="password"
+        />
+     <div class="flex space-x-4 justify-center">
+        <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+         type="submit"
+         [routerLink]="'profile'">
+                Login
+         </button>
+         <button
+         class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+         [routerLink]="'/register'"
+         type="button"
+       >
+         Registrarse
+       </button>
+       
+    </div>
+</form>

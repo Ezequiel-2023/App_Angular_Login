@@ -1,0 +1,20 @@
+<!-- Error -->
+<div *ngIf="visible && mensaje && tipo === 'error'" class="animate-fade-in flex items-center justify-between bg-red-500 text-white text-sm font-bold px-4 py-3 rounded" role="alert">
+  <div class="flex items-center">
+    <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+      <path d="M12.432 0c1.34 0 2.01.912 2.01 1.957..." />
+    </svg>
+    <p>{{ mensaje }}</p>
+  </div>
+  <button (click)="cerrarMensaje()" class="ml-4 text-white text-xl leading-none hover:text-gray-200">&times;</button>
+</div>
+
+<!-- Éxito -->
+<div *ngIf="visible && mensaje && tipo === 'exito'" class="animate-fade-in flex items-center justify-between bg-teal-100 border-t-4 border-teal-500 text-teal-900 px-4 py-3 rounded shadow-md" role="alert">
+  <div>
+    <p class="font-bold">Registro Exitoso</p>
+    <p class="text-sm">{{ mensaje }}</p>
+    <p class="text-sm">Ahora puedes iniciar sesión con tus credenciales.</p>
+  </div>
+  <button (click)="cerrarMensaje()" class="ml-4 text-xl leading-none text-teal-900 hover:text-teal-700">&times;</button>
+</div>
