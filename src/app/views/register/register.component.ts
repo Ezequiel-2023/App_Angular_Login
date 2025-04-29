@@ -63,6 +63,7 @@ onSubmit(): void {
       console.log('Error:', error); // Debug
       this.mensajeGlobal = error.error?.error || 'Error en el registro';
       this.tipoMensaje = 'error';
+      this.registerForm.reset(); // Limpiar el formulario después de un error
     },
   });
 }

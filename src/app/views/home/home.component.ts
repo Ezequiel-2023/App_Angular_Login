@@ -42,10 +42,17 @@ export class HomeComponent {
         this.mensajeGlobal = 'Bienvenido';
         this.tipoMensaje = 'exito';
       },
+      complete: () => {
+        console.log('Inicio de sesión completado'); // Debug
+        this.router.navigate(['profile']); // Redirigir a la página de inicio después de iniciar sesión
+        this.loginForm.reset(); // Limpiar el formulario después de iniciar sesión
+      },
       error: (err) => {
         this.mensajeGlobal = err.error?.error || 'Error al iniciar sesión';
         this.tipoMensaje = 'error';
+        this.loginForm.reset(); // Limpiar el formulario en caso de error
       },
+
     });
   }
   
